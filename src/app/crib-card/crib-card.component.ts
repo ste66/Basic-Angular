@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+// import { Crib } from '../crib';
 
 @Component({
   selector: 'app-crib-card',
@@ -6,8 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./crib-card.component.css'],
 })
 export class CribCardComponent implements OnInit {
+  // @Input('crib') crib: Crib;
   @Input('crib') crib: any;
+  // crib local property abiding by the interface
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    let bedrooms = this.crib.bedrooms;
+  }
 }
